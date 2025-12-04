@@ -29,7 +29,7 @@ export function HowItWorks() {
         <div className="mx-auto max-w-5xl">
           <ol className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {steps.map((step) => (
-              <li key={step.number} className="relative group p-10 bg-white rounded-2xl border-2 border-gray-900 hover:bg-orange-400 hover:border-orange-400 hover:shadow-2xl transition-all duration-500 cursor-pointer">
+              <li key={step.number} className="relative group p-6 sm:p-10 bg-white rounded-2xl border-2 border-gray-900 hover:bg-orange-400 hover:border-orange-400 hover:shadow-2xl transition-all duration-500 cursor-pointer">
                 <div className="text-7xl font-light text-orange-400 group-hover:text-white mb-8 transition-colors duration-500" aria-label={`Step ${step.number}`}>{step.number}</div>
                 <h3 className="text-gray-900 group-hover:text-white mb-4 text-xl font-medium transition-colors duration-500">{step.title}</h3>
                 <p className="text-gray-600 group-hover:text-orange-50 leading-relaxed transition-colors duration-500">{step.description}</p>
