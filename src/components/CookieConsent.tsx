@@ -19,59 +19,32 @@ export function CookieConsent() {
     if (!consent) {
       setShowBanner(true);
     } else {
-      // Load existing preferences and apply them
+      // Load existing preferences
       const savedPreferences = JSON.parse(consent);
       setPreferences(savedPreferences);
-      if (savedPreferences.analytics) {
-        loadGoogleAnalytics();
-      }
     }
   }, []);
-
-  const loadGoogleAnalytics = () => {
-    // Load Google Analytics if not already loaded
-    if (!window.gtag) {
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-BYXDH55NKL";
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(...args: any[]) {
-          window.dataLayer.push(args);
-        }
-        window.gtag = gtag;
-        gtag("js", new Date());
-        gtag("config", "G-BYXDH55NKL");
-      };
-    }
-  };
 
   const handleAcceptAll = () => {
     const newPreferences = { necessary: true, analytics: true };
     localStorage.setItem("cookie-consent", JSON.stringify(newPreferences));
     setPreferences(newPreferences);
-    loadGoogleAnalytics();
-    setShowBanner(false);
-    setShowPreferences(false);
+    // Reload page to apply analytics consent
+    window.location.reload();
   };
 
   const handleRejectAll = () => {
     const newPreferences = { necessary: true, analytics: false };
     localStorage.setItem("cookie-consent", JSON.stringify(newPreferences));
     setPreferences(newPreferences);
-    setShowBanner(false);
-    setShowPreferences(false);
+    // Reload page to disable analytics
+    window.location.reload();
   };
 
   const handleSavePreferences = () => {
     localStorage.setItem("cookie-consent", JSON.stringify(preferences));
-    if (preferences.analytics) {
-      loadGoogleAnalytics();
-    }
-    setShowBanner(false);
-    setShowPreferences(false);
+    // Reload page to apply preferences
+    window.location.reload();
   };
 
   if (!showBanner) return null;
