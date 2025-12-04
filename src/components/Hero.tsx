@@ -6,14 +6,18 @@ export function Hero() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="flex flex-col items-center gap-4 mb-6">
-            <img 
-              src={logo} 
-              alt="Choccy Box Logo" 
+            <img
+              src={logo}
+              alt="Choccy Box Logo"
               className="w-128 h-auto"
+              width="512"
+              height="512"
+              loading="eager"
+              fetchpriority="high"
             />
             <h1 className="text-gray-900">Choccy Box</h1>
           </div>
-          <p className="text-xl text-purple-600 mb-6">Program, Display, Empower.</p>
+          <p className="text-xl text-purple-600 mb-6">Program. Display. Empower.</p>
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
             The intelligent workout management system that empowers gym owners and trainers to focus on what matters most—their members.
           </p>
