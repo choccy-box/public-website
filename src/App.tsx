@@ -3,6 +3,7 @@ import { Features } from "./components/Features";
 import { HowItWorks } from "./components/HowItWorks";
 import { CTA } from "./components/CTA";
 import { Header } from "./components/Header";
+import { CookieConsent } from "./components/CookieConsent";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <HowItWorks />
         <CTA />
       </div>
+      <CookieConsent />
     </div>
   );
 }
