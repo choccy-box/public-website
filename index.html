@@ -4,6 +4,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
     <title>Choccy Box - Program. Display. Empower.</title>
     <meta name="description" content="The intelligent workout management system that empowers gym owners and trainers to focus on what matters most—their members." />
     <meta name="keywords" content="workout management, gym software, fitness tracking, trainer software, gym management system" />
@@ -50,7 +63,32 @@
     }
     </script>
 
-    <!-- Google Analytics loaded conditionally based on cookie consent -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYXDH55NKL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Check if user has rejected analytics
+      const consent = localStorage.getItem("cookie-consent");
+      if (consent) {
+        const preferences = JSON.parse(consent);
+        if (!preferences.analytics) {
+          // Disable analytics if user rejected
+          gtag('config', 'G-BYXDH55NKL', {
+            'anonymize_ip': true,
+            'storage': 'none',
+            'client_storage': 'none'
+          });
+        } else {
+          gtag('config', 'G-BYXDH55NKL');
+        }
+      } else {
+        // Default: load analytics until user makes a choice
+        gtag('config', 'G-BYXDH55NKL');
+      }
+    </script>
   </head>
 
   <body>
