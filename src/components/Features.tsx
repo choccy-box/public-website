@@ -34,14 +34,17 @@ export function Features() {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-7xl">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
-              <article key={feature.name} className="relative">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-purple-600 text-white mb-6" aria-hidden="true">
-                  <feature.icon className="h-6 w-6" />
+              <article
+                key={feature.name}
+                className="relative group p-6 sm:p-10 bg-white rounded-2xl border-2 border-gray-900 hover:bg-purple-600 hover:border-purple-600 hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              >
+                <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-600 group-hover:bg-white text-white group-hover:text-purple-600 mb-8 transition-all duration-500" aria-hidden="true">
+                  <feature.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-gray-900 mb-3">{feature.name}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-gray-900 group-hover:text-white mb-4 text-xl font-medium transition-colors duration-500">{feature.name}</h3>
+                <p className="text-gray-600 group-hover:text-purple-100 leading-relaxed transition-colors duration-500">{feature.description}</p>
               </article>
             ))}
           </div>
