@@ -70,24 +70,28 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      // Check if user has rejected analytics
+      // Set default consent to denied (GDPR compliant)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+
+      // Check if user has given consent
       const consent = localStorage.getItem("cookie-consent");
       if (consent) {
         const preferences = JSON.parse(consent);
-        if (!preferences.analytics) {
-          // Disable analytics if user rejected
-          gtag('config', 'G-BYXDH55NKL', {
-            'anonymize_ip': true,
-            'storage': 'none',
-            'client_storage': 'none'
+        if (preferences.analytics) {
+          // User accepted - grant consent and initialize analytics
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted'
           });
-        } else {
           gtag('config', 'G-BYXDH55NKL');
         }
-      } else {
-        // Default: load analytics until user makes a choice
-        gtag('config', 'G-BYXDH55NKL');
+        // If rejected, analytics is not configured at all
       }
+      // If no consent yet, analytics is not configured (stays in denied state)
     </script>
   </head>
 
