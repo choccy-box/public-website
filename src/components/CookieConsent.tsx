@@ -42,21 +42,16 @@ export function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 p-4 sm:p-6 shadow-2xl"
+      className="fixed bottom-0 left-0 right-0 p-3 sm:p-4 shadow-2xl"
       style={{
         zIndex: 99999,
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: '100vw',
         backgroundColor: '#18181b',
         borderTop: '2px solid rgb(168 85 247)'
       }}
     >
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex-1">
-          <p className="text-sm text-white leading-relaxed">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <div className="flex-1 text-center sm:text-left">
+          <p className="text-xs sm:text-sm text-white leading-snug">
             We use cookies to analyze site usage and improve your experience. By clicking "Accept", you consent to our use of analytics cookies.{' '}
             <a
               href="https://policies.google.com/technologies/cookies"
@@ -68,16 +63,16 @@ export function CookieConsent() {
             </a>
           </p>
         </div>
-        <div className="flex gap-4 sm:gap-6 w-full sm:w-auto shrink-0">
+        <div className="flex gap-3 sm:gap-4 w-full sm:w-auto shrink-0">
           <button
             onClick={handleReject}
-            className="flex-1 sm:flex-none px-8 py-3 text-base font-semibold text-white border-2 border-gray-700 hover:border-gray-500 rounded-lg transition-all min-w-[120px]"
+            className="flex-1 sm:flex-none px-6 py-2 text-sm font-medium text-white border border-gray-700 hover:border-gray-500 rounded-md transition-all"
           >
             Reject
           </button>
           <button
             onClick={handleAccept}
-            className="flex-1 sm:flex-none px-8 py-3 text-base font-semibold bg-purple-600 text-white hover:bg-purple-700 rounded-lg transition-all min-w-[120px]"
+            className="flex-1 sm:flex-none px-6 py-2 text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 rounded-md transition-all"
           >
             Accept
           </button>
