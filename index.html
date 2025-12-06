@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -20,7 +22,7 @@
     <title>Choccy Box - Program. Display. Empower.</title>
     <meta name="description" content="The intelligent workout management system that empowers gym owners and trainers to focus on what matters most—their members." />
     <meta name="keywords" content="workout management, gym software, fitness tracking, trainer software, gym management system" />
-    <meta name="theme-color" content="#9333ea" />
+    <meta name="theme-color" content="#6B9080" />
     <link rel="canonical" href="https://choccybox.com/" />
 
     <!-- Open Graph / Facebook -->
@@ -96,6 +98,12 @@
   </head>
 
   <body>
+    <!-- Hidden form for Netlify detection -->
+    <form name="interest" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
