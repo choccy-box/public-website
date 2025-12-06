@@ -21,7 +21,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-32 sm:py-40 bg-gradient-to-b from-white to-cream relative overflow-hidden" aria-labelledby="how-it-works-heading">
+    <section className="py-32 sm:py-40 bg-white relative overflow-hidden" aria-labelledby="how-it-works-heading">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="mx-auto max-w-4xl text-center mb-24">

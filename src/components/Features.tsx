@@ -29,9 +29,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-32 sm:py-40 bg-white relative" aria-labelledby="features-heading">
-      {/* Subtle decorative background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/50 to-white"></div>
+    <section className="py-32 sm:py-40 bg-gradient-to-b from-cream to-white relative" aria-labelledby="features-heading">
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Section Header */}

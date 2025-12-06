@@ -23,11 +23,8 @@ export default function App() {
         <Header />
         <div className="pt-20">
           <Hero />
-          <div className="h-24"></div>
           <Features />
-          <div className="h-24"></div>
           <HowItWorks />
-          <div className="h-24"></div>
           <Footer />
         </div>
         <CookieConsent />
