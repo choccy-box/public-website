@@ -9,6 +9,16 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # Cloudflare Turnstile site key for form captcha
+  # Get your site key from: https://dash.cloudflare.com/
+  # 
+  # IMPORTANT: For production, set this in Netlify dashboard instead:
+  # Site settings > Environment variables > Add variable
+  # Key: VITE_TURNSTILE_SITE_KEY
+  # Value: your_actual_site_key_here
+  #
+  # This test key (always passes) is fine for development
+  VITE_TURNSTILE_SITE_KEY = "1x00000000000000000000AA"
 
 [[headers]]
   for = "/*"
