@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Loader2 } from 'lucide-react';
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
-import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { cn } from './ui/utils';
@@ -31,11 +30,11 @@ export function RegisterForm({ className, onSuccess }: RegisterFormProps) {
   const { 
     register, 
     handleSubmit, 
-    formState: { errors, touchedFields },
+    formState: { errors },
     reset 
   } = useForm<FormData>({
-    mode: 'onBlur', // Validate on blur for better UX
-    reValidateMode: 'onChange', // Re-validate on change after first blur
+    mode: 'all', // Validate on blur, change, and submit
+    reValidateMode: 'onChange', // Re-validate on change after first validation
   });
 
   const onSubmit = async (data: FormData) => {
