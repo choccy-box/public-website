@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://choccybox.com/sitemap.xml
+Sitemap: https://choccybox.app/sitemap.xml
